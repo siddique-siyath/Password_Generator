@@ -6,7 +6,11 @@
 </div>
 <div class="content">
   <div>
-    <img src="../../assets/images/image_1.svg" alt="image 1">
+    <img *ngIf="passwordLength <= 4" src="../../assets/images/image_1.svg" alt="image 1">
+    <img *ngIf="passwordLength >= 5 && passwordLength <= 7" src="../../assets/images/image_2.svg" alt="image 1">
+    <img *ngIf="passwordLength >= 8 && passwordLength <= 9" src="../../assets/images/image_3.svg" alt="image 1">
+    <img *ngIf="passwordLength >= 10 && passwordLength <= 11" src="../../assets/images/image_4.svg" alt="image 1">
+    <img *ngIf="passwordLength > 11" src="../../assets/images/image_5.svg" alt="image 1">
   </div>
   <div class="form">
     <div  class="password-field">
@@ -17,7 +21,7 @@
         <img style="cursor: pointer;" (click)="generatePassword()" src="../../assets/images/refresh_icon.svg" alt="icon">
       </div>
     </div>
-      <button>Copy</button>
+      <button (click)="copyToClipboard()">Copy</button>
     </div>
     <div class="slider-field">
       <div>
@@ -33,19 +37,19 @@
     </div>
     <div class="checkboxes">
       <div class="checkbox_input">
-      <input type="checkbox" [(ngModel)]="checkBox.capitalLetter" name="ABC" id="ABC">
+      <input type="checkbox" (change)="generatePassword()" [(ngModel)]="checkBox.capitalLetter" name="ABC" id="ABC">
       <label for="ABC">ABC</label>
     </div>
     <div class="checkbox_input">
-      <input type="checkbox" [(ngModel)]="checkBox.smallLetter" name="abc" id="abc">
+      <input type="checkbox" (change)="generatePassword()" [(ngModel)]="checkBox.smallLetter" name="abc" id="abc">
       <label for="abc">abc</label>
     </div>
     <div class="checkbox_input">
-      <input type="checkbox" [(ngModel)]="checkBox.number" name="123" id="123">
+      <input type="checkbox" (change)="generatePassword()" [(ngModel)]="checkBox.number" name="123" id="123">
       <label for="123">123</label>
     </div>
     <div class="checkbox_input">
-      <input type="checkbox" [(ngModel)]="checkBox.symbol" name="#$&" id="#$&">
+      <input type="checkbox" (change)="generatePassword()" [(ngModel)]="checkBox.symbol" name="#$&" id="#$&">
       <label for="#$&">#$&</label>
     </div>
     </div>

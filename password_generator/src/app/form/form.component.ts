@@ -26,7 +26,7 @@ export class FormComponent implements OnInit{
   constructor() {}
 
   ngOnInit(): void {
-      
+    this.generatePassword()
   }
 
   generatePassword(){
@@ -41,7 +41,7 @@ export class FormComponent implements OnInit{
     if(this.passwordLength >= 5 && this.passwordLength <= 7) this.passwordType = "Week"
     if(this.passwordLength >= 8 && this.passwordLength <= 9) this.passwordType = "Good"
     if(this.passwordLength >= 10 && this.passwordLength <= 11) this.passwordType = "Strong"
-    if(this.passwordLength >= 11) this.passwordType = "Very Strong"
+    if(this.passwordLength > 11) this.passwordType = "Very Strong"
 
 
     let password = "";
@@ -60,6 +60,16 @@ export class FormComponent implements OnInit{
 
     this.password = password;
     console.log(password)
+  }
+
+  copyToClipboard() {
+    const textArea = document.createElement('textarea');
+    textArea.value = this.password;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Text copied to clipboard!');
   }
 
 }
