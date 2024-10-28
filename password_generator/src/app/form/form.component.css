@@ -29,16 +29,16 @@ font-size: 60px;
 
 .password-field{
   display: flex;
-  gap: 10px;
+  gap: 2rem;
 }
 
 .password{
   height: 45px;
-  width: 25rem;
+  width: 26rem;
   border-radius: 25px;
   border: 2px solid #1697ec;
   display: flex;
-  gap: 15px;
+  gap: 1.2rem;
 }
 
 input[name=password]{
@@ -48,6 +48,9 @@ input[name=password]{
     width: 13rem;
     font-size: 18px;
     margin: 3px 10px 0px 20px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 button{
@@ -58,18 +61,21 @@ button{
     color: white;
     font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .password-field label{
   display: flex;
   align-items: center;
+  justify-content: center;
   background: green;
-  font-size: 17px;
-    padding: 0px 7px 0px 7px;
+  width: 5rem;
+  font-size: 15px;
+    padding: 2px 9px 2px 9px;
     border-radius: 10px;
     height: 2rem;
     height: 30px;
-    margin-top: 7px;
+    margin-top: 5px;
 }
 
 .refresh_icon {
@@ -79,16 +85,44 @@ button{
 
 .slider-field{
   display: flex;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center
 }
 
 .checkbox_field{
   display: flex;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .checkboxes{
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+.input_heading{
+  width: 10rem;
+  text-align: start;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+input[type=range]{
+width: 20rem;
+cursor: pointer;
+}
+
+input[type=checkbox]{
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #C5D6E0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px rgba(7, 29, 43, 0.12) inset;
+  }
+
+.checkbox_input{
+  display: flex;
+    align-items: center;
+    gap: 2px;
 }

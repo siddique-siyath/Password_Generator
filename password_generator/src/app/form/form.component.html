@@ -11,42 +11,41 @@
   <div class="form">
     <div  class="password-field">
       <div class="password">
-      <input type="text" name="password" id="password">
-      <label for="password">ver strong</label>
+      <input type="text" [(ngModel)]="password" name="password" id="password" readonly>
+      <label for="password">{{passwordType}}</label>
       <div class="refresh_icon">
-        <img src="../../assets/images/refresh_icon.svg" alt="icon">
+        <img style="cursor: pointer;" (click)="generatePassword()" src="../../assets/images/refresh_icon.svg" alt="icon">
       </div>
     </div>
       <button>Copy</button>
     </div>
     <div class="slider-field">
       <div>
-      <p>Password length:</p>
-      <p>15</p>
+      <p class="input_heading">Password length : {{passwordLength}}</p>
     </div>
       <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+        <input type="range" (change)="generatePassword()" [(ngModel)]="passwordLength" min="1" max="50" [value]="passwordLength"class="slider" id="myRange">
       </div>
     </div>
     <div class="checkbox_field">
     <div>
-      <p>Characters <br> used:</p>
+      <p class="input_heading">Characters <br> used:</p>
     </div>
     <div class="checkboxes">
-      <div>
-      <input type="checkbox" name="ABC" id="ABC">
+      <div class="checkbox_input">
+      <input type="checkbox" [(ngModel)]="checkBox.capitalLetter" name="ABC" id="ABC">
       <label for="ABC">ABC</label>
     </div>
-    <div>
-      <input type="checkbox" name="abc" id="abc">
+    <div class="checkbox_input">
+      <input type="checkbox" [(ngModel)]="checkBox.smallLetter" name="abc" id="abc">
       <label for="abc">abc</label>
     </div>
-    <div>
-      <input type="checkbox" name="123" id="123">
+    <div class="checkbox_input">
+      <input type="checkbox" [(ngModel)]="checkBox.number" name="123" id="123">
       <label for="123">123</label>
     </div>
-    <div>
-      <input type="checkbox" name="#$&" id="#$&">
+    <div class="checkbox_input">
+      <input type="checkbox" [(ngModel)]="checkBox.symbol" name="#$&" id="#$&">
       <label for="#$&">#$&</label>
     </div>
     </div>
